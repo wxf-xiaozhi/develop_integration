@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+com.ifyou.skypivot.framework.loadbalance.CustomLoadBalancerAutoConfig,\
+com.ifyou.skypivot.framework.feign.CustomFeignClientAutoConfig

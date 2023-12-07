@@ -22,12 +22,12 @@ import java.nio.charset.StandardCharsets;
  * @date 2023年09月02日
  * @version: 1.0
  */
-public class FeignDecoder implements Decoder {
+public class CustomFeignDecoder implements Decoder {
 
     private final Decoder delegate;
     private ObjectMapper objectMapper;
 
-    public FeignDecoder(Decoder decoder, ObjectMapper objectMapper) {
+    public CustomFeignDecoder(Decoder decoder, ObjectMapper objectMapper) {
         this.delegate = decoder;
         this.objectMapper = objectMapper;
     }

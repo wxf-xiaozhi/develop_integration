@@ -36,26 +36,26 @@ public class CustomFeignClientAutoConfig {
 
     @Bean
     @ConditionalOnExpression("${custom.feignconfig.tranceId:false}")
-    public FeignInterceptor basicAuthRequestInterceptor() {
-        return new FeignInterceptor();
+    public CustomFeignInterceptor basicAuthRequestInterceptor() {
+        return new CustomFeignInterceptor();
     }
 
     @Bean
     @ConditionalOnExpression("${custom.feignconfig.tranceId:false}")
     public Decoder feignDecoder(){
-        return new FeignDecoder(new OptionalDecoder(new ResponseEntityDecoder(new SpringDecoder(this.messageConverters))),objectMapper);
+        return new CustomFeignDecoder(new OptionalDecoder(new ResponseEntityDecoder(new SpringDecoder(this.messageConverters))),objectMapper);
     }
 
 
     @Bean
     Logger.Level feignLoggerLevel() {
-        if("NONE".equals(configProperies.getLoggerLevel())){
+        if("NONE".equals(configProperies.getLoggerFormat())){
             return Logger.Level.NONE;
-        }else if("BASIC".equals(configProperies.getLoggerLevel())){
+        }else if("BASIC".equals(configProperies.getLoggerFormat())){
             return Logger.Level.BASIC;
-        }else if("HEADERS".equals(configProperies.getLoggerLevel())){
+        }else if("HEADERS".equals(configProperies.getLoggerFormat())){
             return Logger.Level.HEADERS;
-        }else if("FULL".equals(configProperies.getLoggerLevel())){
+        }else if("FULL".equals(configProperies.getLoggerFormat())){
             return Logger.Level.FULL;
         }else{
             return Logger.Level.NONE;
@@ -67,5 +67,15 @@ public class CustomFeignClientAutoConfig {
     @ConditionalOnExpression("${custom.feignconfig.customfeign:false}")
     public Client feignIPClient(LoadBalancerClient loadBalancerClient) {
         return new CustomFeignClient(loadBalancerClient);
+    }
+
+    @Bean
+    public Logger feignLogger() {
+        if("INFO".equals(configProperies.getLoggerLevel())){
+            return new CustomFeignLogger(CustomFeignLogger.FeignLoggerLevelEnum.INFO);
+        }
+        return new CustomFeignLogger(CustomFeignLogger.FeignLoggerLevelEnum.DEBUG);
+
+
     }
 }

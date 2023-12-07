@@ -22,7 +22,7 @@ import java.util.UUID;
  * @version: 1.0
  */
 @Slf4j
-public class FeignInterceptor implements RequestInterceptor {
+public class CustomFeignInterceptor implements RequestInterceptor {
 
     public static final String CONTENT_LENGTH = "content-length";
 

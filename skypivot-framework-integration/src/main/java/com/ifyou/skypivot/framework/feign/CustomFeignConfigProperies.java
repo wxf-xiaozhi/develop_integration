@@ -26,6 +26,9 @@ public class CustomFeignConfigProperies {
      * FULL，记录请求和响应的标头、正文和元数据。
      * @return
      */
+    private String loggerFormat;
+
+
     private String loggerLevel;
 
 

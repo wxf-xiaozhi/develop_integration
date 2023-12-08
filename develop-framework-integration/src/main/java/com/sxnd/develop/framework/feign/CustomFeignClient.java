@@ -80,7 +80,7 @@ public class CustomFeignClient extends Client.Default {
             return Response.builder().request(request).status(HttpStatus.SERVICE_UNAVAILABLE.value()).body(message, StandardCharsets.UTF_8).build();
         } else {
             String reconstructedUrl = this.loadBalancerClient.reconstructURI(instance, originalUri).toString();
-            log.info("请求至：---> {}",reconstructedUrl);
+            log.debug("请求至：---> {}",reconstructedUrl);
             Request newRequest = this.buildRequest(request, reconstructedUrl);
             return super.execute(newRequest, options);
         }

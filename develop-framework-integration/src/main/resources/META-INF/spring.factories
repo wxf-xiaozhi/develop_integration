@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+com.sxnd.develop.framework.loadbalance.CustomLoadBalancerAutoConfig,\
+com.sxnd.develop.framework.feign.CustomFeignClientAutoConfig

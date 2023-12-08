@@ -10,14 +10,14 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.ifyou.skypivot.framework</groupId>
-    <artifactId>skypivot-framework</artifactId>
+    <groupId>com.sxnd.develop.framework</groupId>
+    <artifactId>develop-framework</artifactId>
     <packaging>pom</packaging>
     <version>${revision}</version>
 
     <modules>
-        <module>skypivot-framework-common</module>
-        <module>skypivot-framework-integration</module>
+        <module>develop-framework-common</module>
+        <module>develop-framework-integration</module>
     </modules>
 
     <properties>

@@ -28,7 +28,9 @@ public class CustomFeignConfigProperies {
      */
     private String loggerFormat;
 
-
+    /**
+     * feign日志级别
+     */
     private String loggerLevel;
 
 

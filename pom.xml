@@ -21,7 +21,7 @@
     </modules>
 
     <properties>
-        <revision>2.0.7-SNAPSHOT</revision>
+        <revision>3.0.0-SNAPSHOT</revision>
         <!-- 编码-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- JDK 版本-->

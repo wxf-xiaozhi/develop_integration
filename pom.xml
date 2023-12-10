@@ -35,7 +35,6 @@
         <hutool.version>5.6.5</hutool.version>
         <!-- 打包时跳过测试用例 -->
         <maven.test.skip>true</maven.test.skip>
-
     </properties>
 
     <build>

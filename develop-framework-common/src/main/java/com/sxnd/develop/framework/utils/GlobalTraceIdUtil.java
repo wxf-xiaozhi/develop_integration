@@ -1,6 +1,7 @@
 package com.sxnd.develop.framework.utils;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 
 import java.util.UUID;
@@ -27,7 +28,12 @@ public class GlobalTraceIdUtil {
 
     public static void putTraceId(String traceId) {
         // log.info("put tranceID:{}",traceId);
-        MDC.put(TRACE_ID, traceId);
+        if(StringUtils.isNotBlank(traceId)){
+            MDC.put(TRACE_ID, traceId);
+        }else{
+            generate();
+        }
+
     }
 
     /**
